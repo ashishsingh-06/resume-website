@@ -86,4 +86,37 @@
     }
 }
 
+@include breakpoint(tablet){
+
+    .about{
+
+        &__row{
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__wrapper{
+            width: 100%;
+            @include margin(20px 0 0 0);
+            @include padding(20px 0px);
+        }
+
+        &__description{
+
+            &::after{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: -20px;
+                left:48%;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid white;
+            }
+        }
+    }
+
+}
+
 

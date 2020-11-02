@@ -131,3 +131,27 @@
     }
 
 }
+
+@include breakpoint(tablet){
+
+    .experience{
+
+        &__row{
+            flex-direction: column;
+        }
+    
+        &__col{
+            width: 100%;
+            @include margin(0 0 50px 0);
+        }
+    
+        .content{
+            @include padding(0 0 0 25px);
+        }
+    
+        .content-education{
+            @include padding(0 0 0 25px);
+        }
+    }
+
+}
