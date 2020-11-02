@@ -1,0 +1,160 @@
+.hero{
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+
+    &__container{
+        position: relative;
+        z-index: 1;
+    }
+
+    &__intro{
+        text-align: center;
+
+        img{
+            height: 120px;
+            width: 120px;
+        }
+
+        h1{
+            color: $color-dark;
+            font-weight: 600;
+        }
+    }
+
+    &__description{
+        color: $color-dark;
+        display: inline-block;
+        font-size: 20px;
+        @include margin(20px 0 0 0);
+    }
+
+    &__scroll-down{
+        position: relative;
+        text-align: center;
+        top: 15%;
+        z-index: 2;
+
+        a{
+            cursor: pointer;
+        }
+
+        .fa{
+            @include margin(5px 0 0 0);
+            display: inline-block;
+            font-size: 30px;
+            color: $color-dark;
+            position: relative;
+            animation: arrow 2s linear infinite;
+        }
+    }
+}
+
+@keyframes arrow{
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+}
+
+.social-icons{
+
+    @include margin(25px 0 0 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    &__links{
+        font-size: 20px;
+    }
+  
+    .fa{
+        color: $color-dark;
+        font-size: 24px;
+
+        &:hover{
+            color:rgba(0,0,0,0.85);
+        }
+    }
+}
+
+.parallax{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    svg{
+        position: absolute;
+    }
+
+    &__p1{
+        left: 10%;
+        top: 20%;
+    }
+
+    &__p2{
+        left: 15%;
+        top: 36%;
+    }
+
+    &__p3{
+        left: 20%;
+        bottom: 20%;
+    }
+
+    &__p4{
+        left: 15%;
+        bottom: 10%;
+    }
+
+    &__p5{
+        left: 35%;
+        top: 15%;
+    }
+
+    &__p6{
+        left: 40%;
+        bottom: 10%;
+    }
+
+    &__p7{
+        top: 17%;
+        right: 30%;
+    }
+
+    &__p8{
+        right: 30%;
+        bottom: 20%;
+    }
+
+    &__p9{
+        right: 10%;
+        top: 15%;
+    }
+
+    &__p10{
+        right: 20%;
+        top: 40%;
+    }
+
+    &__p11{
+        right: 20%;
+        bottom: 10%;
+    }
+
+}

@@ -1,0 +1,57 @@
+@mixin clearfix {
+    &::after{
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+
+@mixin text-clipping{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin size($width,$height:$width){
+    width: $width;
+    height: $height;
+}
+
+@mixin padding($values...) {
+    @each $var in $values {
+        padding: #{$var};
+    }
+}
+
+@mixin margin($values...) {
+    @each $var in $values {
+        margin: #{$var};
+    }
+}
+
+@mixin center-block {
+    display: block;
+    margin: 0 auto;
+}
+
+@mixin breakpoint($size) {
+    
+    @if $size == mobile {
+        
+        @media (max-width:480px) {
+            @content;
+        }
+    }
+    @else if $size == tablet{
+        
+        @media (min-width:481px) and (max-width:1000px){
+            @content;
+        }
+    }
+    @else if $size == desktop{
+
+        @media (max-width:1001px) {
+            @content;
+        }
+    }
+}

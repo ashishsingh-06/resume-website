@@ -1,0 +1,132 @@
+.container{
+    max-width: 80%;
+    @include margin(0 auto);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+    @include clearfix;
+    @include padding(15px 0px);
+    background-color: $color-white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.header__container{
+    max-width: 80%;
+    @include margin(0 auto);
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-icon,.bars-icon{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-dropdown{
+    position: relative;
+}
+
+.nav{
+    position: absolute;
+    top: 210%;
+    right: -222%;
+    background-color: rgba(0,0,0,0.85);
+    border-radius: 5px 5px 5px 5px;
+    @include padding(20px 0px 20px 0px);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 54%;
+        height: 0;
+        width: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid rgba(0,0,0,0.85);
+    }
+
+    &__list-item{
+        @include padding(8px 45px 8px 20px);
+        @include margin(10px 0 0 0);
+        transition: all .2s ease-in;
+
+        &:first-child{
+            @include margin(0px 0 0 0);
+        }
+
+        &:hover{
+            transform: translateX(6px);
+        }
+    }
+
+    &__link{
+        font-size: 18px;
+        user-select: none;
+        color: $color-white;
+    }
+
+    i{
+        @include margin(0 6px 0 0);
+    }
+}
+
+.hide{
+    display: none;
+}
+
+.brand{
+   color: $color-black; 
+   font-size: 18px;
+   font-weight: 600;
+   line-height: 1.9;
+}
+
+@include breakpoint(mobile){
+    
+    .menu-icon,.bars-icon{
+        font-size: 25px;
+        line-height: 1.2;
+    }
+
+    .brand{
+        font-size: 16px;
+    }
+
+    .nav{
+        position: fixed;
+        @include padding(10px 5px);
+        top: 80px;
+        left: 10px;
+        right: 10px;
+
+        &::after{
+            left: 87%;
+        }
+        
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        &__list-item{
+            display: inline-block;
+            @include padding(5px);
+            @include margin(0px);
+
+            &:hover{
+                transform: translateX(0px);
+            }
+        }
+
+        &__link{
+            font-size: 15px;
+        }
+    }
+    
+}

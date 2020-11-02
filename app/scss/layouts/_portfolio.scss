@@ -1,0 +1,74 @@
+.portfolio{
+    @include padding(80px 0 100px 0);
+
+    &__row{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        @include margin(50px 0 0 0);
+        @include padding(20px 0 0 0);
+    }
+}
+
+
+.card{
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    @include size(320px,250px);
+    @include margin(0 0 60px 0);
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+    overflow: hidden;
+
+    &__body{
+        @include size(320px,250px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: contain;
+        object-position: center;
+    }
+
+   img{
+       max-width: 60%;
+   }
+
+   &__overlay{
+       background-color: rgba(108, 108, 229,0.8);
+       @include padding(35px 20px);
+       position: absolute;
+       opacity: 1;
+       top: 97%;
+       left: 0;
+       height: 100%;
+       width: 100%; 
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       -webkit-transition: all 0.3s ease-in;
+       -o-transition: all 0.3s ease-in;
+       transition: all 0.3s ease-in;
+   }
+
+   &:hover &__overlay{ 
+        top: 0;
+   }
+
+}
+
+.view-code,.live-preview{
+    display: inline-block;
+    border-radius: 5px;
+    @include margin(0 0 20px 0);
+    @include padding(10px 20px);
+    color: $color-dark;
+    font-size: 16px;
+    background-color: white;
+}
+
+.btn-disabled{
+    background-color: darkgray;
+    pointer-events: none;
+}

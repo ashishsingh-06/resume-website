@@ -1,0 +1,133 @@
+.experience{
+    @include padding(100px 0);
+    background-color: #f8f9fb;;
+
+    &__row{
+        display: flex;
+        @include margin(50px 0 0 0);
+        justify-content: space-between;
+    }
+
+    &__col{
+        width: 45%;
+    }
+
+    &__wrapper{
+        position: relative;
+        @include padding(30px);
+        border-radius: 12px;
+        box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+        background-color: $color-white;
+    }
+
+    &__item{
+        @include margin(0 0 50px 0);
+
+        &:last-child{
+            @include margin(0 0 0 0);
+        }
+    }
+    
+    .content{
+        position: relative;
+        @include padding(0 0 0 50px);
+
+        &::before{
+            content: '\f0b1';
+            font-family: 'FontAwesome';
+            font-size: 20px;
+            position: absolute;
+            left: -10px;
+            top: 5px;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            height: 80%;
+            width: 2px;
+            background-color:$color-dark;
+        }
+    }
+
+    .content-education{
+
+        position: relative;
+        @include padding(0 0 0 50px);
+
+        &::before{
+            content: '\f19d';
+            font-family: 'FontAwesome';
+            font-size: 20px;
+            position: absolute;
+            left: -10px;
+            top: 5px;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            height: 80%;
+            width: 2px;
+            background-color:$color-dark;
+        }
+    }
+
+    .time{
+        color: $color-grey-500;
+        display: block;
+        @include margin(0 0 5px 0);
+        text-transform: uppercase;
+    }
+
+    .title,.place,.grade{
+        display: block;
+        @include margin(0 0 5px 0);
+        color: $color-dark;
+        text-transform: uppercase;
+    }
+
+    .place a{
+        color: $color-dark;
+    }
+
+    .description{
+        font-size: 18px;
+    }
+}
+
+@include breakpoint(mobile){
+
+    .experience{
+
+        &__row{
+            flex-direction: column;
+        }
+
+        &__col{
+            width: 100%;
+            @include margin(0 0 50px 0);
+        }
+
+        .content{
+            @include padding(0 0 0 25px);
+        }
+
+        .content-education{
+            @include padding(0 0 0 25px);
+        }
+
+        .time{
+            font-size: 15px;
+        }
+
+        .description{
+            font-size: 16px;
+        }
+    }
+
+}

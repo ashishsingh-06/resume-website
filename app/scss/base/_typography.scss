@@ -1,0 +1,62 @@
+h1{
+    font-size: 48px;
+    @include margin(20px 0 0 0);
+}
+
+h2{
+    font-size: 30px;
+    color: $color-dark;
+    @include margin(0 0 20px 0);
+}
+
+h3{
+    font-size: 21px;
+    font-weight: normal;
+}
+
+h4{
+    font-size: 17px;
+    font-weight: normal;
+}
+
+h5{
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 0.75px;
+    color: $color-white;
+    @include margin(0 0 20px 0);
+}
+
+h6{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+}
+
+p{
+    color: #5E5C7F;
+    font-size: 22px;
+    @include margin(0 0 10px 0);
+}
+
+
+@include breakpoint(mobile){
+
+    h1{
+        font-size: 40px;
+    }
+
+    h3{
+        font-size: 17px;
+    }
+
+    h4{
+        font-size: 15px;
+    }
+    
+    p{
+        font-size: 20px;
+    }
+}

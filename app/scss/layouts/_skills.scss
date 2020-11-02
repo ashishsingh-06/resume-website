@@ -1,0 +1,57 @@
+.skills{
+
+    @include padding(50px 0 100px 0);
+
+    &__row{
+        @include margin(50px 0 0 0);
+        @include padding(20px 0);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    &__item{
+        width: 90px;
+        @include margin(0px 20px 20px 20px);
+        transition: all 0.2s ease-in;
+
+        &--css{
+            width: 130px;
+        }
+
+        &--bootstrap{
+            width: 130px;
+        }
+
+        &--java{
+            width: 80px;
+        }
+
+        &:hover{
+            transform: scale(0.92,0.92);
+        }
+    }
+    
+}
+
+@include breakpoint(mobile){
+
+    .skills{
+
+        &__item{
+            width: 70px;
+
+             &--css{
+                width: 100px;
+            }
+
+            &--bootstrap{
+                width: 100px;
+            }
+
+            &--java{
+                width: 60px;
+            }
+        }
+    }
+}
