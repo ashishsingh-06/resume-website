@@ -55,13 +55,13 @@ function watch(){
 }
 
 
-gulp.task('default', gulp.series(styles, scripts, watch));
+// gulp.task('default', gulp.series(styles, scripts, watch));
 
-// var setup = gulp.series(
-//     gulp.parallel(styles,scripts),
-//     watch
-// )
+var setup = gulp.series(
+    gulp.parallel(styles,scripts),
+    watch
+)
 
 exports.minify = minify;
 exports.scripts = scripts;
-// exports.default = setup;
+exports.default = setup;
