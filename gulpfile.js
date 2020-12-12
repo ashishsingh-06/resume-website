@@ -54,11 +54,11 @@ function watch(){
     gulp.watch(paths.scripts.src,scripts);
 }
 
-var build = gulp.series(
+var setup = gulp.series(
     gulp.parallel(styles,scripts),
     watch
 )
 
 exports.minify = minify;
 exports.scripts = scripts;
-exports.default = build;
+exports.default = setup;
