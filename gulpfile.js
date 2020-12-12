@@ -55,7 +55,7 @@ function watch(){
 }
 
 
-gulp.task('default', gulp.series(
+gulp.task('build', gulp.series(
     gulp.parallel(styles,scripts),
     watch
 ));
