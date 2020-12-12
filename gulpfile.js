@@ -55,7 +55,7 @@ function watch(){
 }
 
 
-gulp.task('default', gulp.series('sass', 'js', 'watch'));
+gulp.task('default', gulp.series('styles', 'scripts', 'watch'));
 
 // var setup = gulp.series(
 //     gulp.parallel(styles,scripts),
